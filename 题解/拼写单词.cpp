@@ -23,7 +23,7 @@ public:
     int countCharacters(vector<string> &words, string chars)
     {
         int count = 0;
-        bool flag = false;
+        bool flag = false;                     // 标记
         string c_chars(chars);                 // 构造c_chars保存chars
         for (int i = 0; i < words.size(); i++) // 迭代单词表
         {
