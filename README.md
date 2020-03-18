@@ -1,4 +1,4 @@
-* ## leetcode
+* ## LEETCODE
     > ### 记录在 [leetcode](https://github.com/maoqifan1/leetcode/tree/master/题解)刷过的题
 
 * ## UOJ
