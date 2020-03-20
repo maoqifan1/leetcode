@@ -18,8 +18,8 @@ class Solution
 public:
     vector<int> getLeastNumbers(vector<int> &arr, int k)
     {
-        sort(arr.begin(), arr.end()); // 排序
-        arr.erase(arr.begin() + k,arr.end()); // 删除不需要的元素
-        return arr;
+        partial_sort(arr.begin(), arr.begin() + k, arr.end()); // 排序
+        // arr.erase(arr.begin() + k, arr.end());                 // 删除不需要的元素
+        return vector<int>(arr.begin(),arr.begin() + k);
     }
 };
