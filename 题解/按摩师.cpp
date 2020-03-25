@@ -22,7 +22,7 @@ using namespace std;
 class Solution
 {
 public:
-    int massage(vector<int> &nums)
+    int massage1(vector<int> &nums) // o(n) 空间复杂度
     {
         int size = nums.size();
         if (size == 0)
@@ -34,8 +34,19 @@ public:
         dp[1] = max(nums[0], nums[1]); // 从nums数组的前两个元素中找出最大值
         for (int i = 2; i < nums.size(); i++)
         {
-            dp[i] = max(dp[i - 1], nums[i] + dp[i - 2]);  // 递推公式
+            dp[i] = max(dp[i - 1], nums[i] + dp[i - 2]); // 递推公式
         }
         return dp[nums.size() - 1]; // 返回最后一个元素，这个元素一定是总时长最大的
+    }
+    int message2(vector<int> &nums) // o(1) 空间复杂度
+    {
+        int a = 0, b = 0;
+        for (int i = 0; i < nums.size(); i++)
+        {
+            int c = max(b, a + nums[i]);
+            a = b;
+            b = c;
+        }
+        return b;
     }
 };
